@@ -3,5 +3,10 @@
 		"customerName": "Medini",
 		"amount": 30.0,
 		"numberOfShares": 10
+	},
+	{
+		"customerName": "suhil",
+		"amount": 10002.0,
+		"numberOfShares": 13
 	}
 ]

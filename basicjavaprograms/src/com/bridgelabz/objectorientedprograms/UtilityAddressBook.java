@@ -16,11 +16,14 @@ import com.bridgelabz.utility.Utility;
 
 public class UtilityAddressBook {
 	public static List<Object> list = new ArrayList<>();
-	public static void addPerson(String file) throws Exception {
-        System.out.println("Enter the Name of address book");
+
+	public static void addPerson() throws Exception {
+		System.out.println("Enter the Name of address book");
+		String filename = Utility.userInputString();
+		String file = "/home/bridgrlabz/Addressbook/" + filename + ".json";
 		System.out.println("enter the number persons");
 		int noofperson = Utility.userInputInteger();
-		 for (int j = 0; j < noofperson; j++) {
+		for (int j = 0; j < noofperson; j++) {
 
 			System.out.println("enter detail information about person");
 			System.out.println("Enter the  FirstName");
@@ -54,27 +57,31 @@ public class UtilityAddressBook {
 	}
 
 	public static void print(String file) throws Exception {
-		
+
 		list = pareseFile(file);
 		ObjectMapper mapper = new ObjectMapper();
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(list.get(i)));
 		}
+		//System.out.println(list.toString());
 	}
 
-	public static void editinformation(String file, int index) throws Exception {
+	public static void editinformation(int index) throws Exception {
 		
+		System.out.println("enter your address book to be edited");
+		String filename = Utility.userInputString();
+		String file = "/home/bridgrlabz/Addressbook/" + filename + ".json";
 		Object object = new JSONParser().parse(new FileReader(file));
 		JSONArray array = (JSONArray) object;
 		for (int i = 0; i < array.size(); i++) {
 			JSONObject obj = (JSONObject) array.get(i);
 			list.add(array.get(i));
 		}
-
+     /*  List<Object>list1=new ArrayList<>();
+       list1=list;*/
 		JSONObject obj = (JSONObject) array.get(index);
 		String firstname = (String) obj.get("firstName");
 		String lastname = (String) obj.get("lastName");
-		list.remove(index);
 		System.out.println("Enter the  Address");
 		String address = Utility.userInputString();
 		System.out.println("Enter the city");
@@ -86,6 +93,7 @@ public class UtilityAddressBook {
 		System.out.println("Enter the  Phonenumber");
 		String phonenumber = Utility.userInputString();
 		Person p1 = new Person(firstname, lastname, address, city, state, zip, phonenumber);
+		list.remove(index);
 		list.add(index, p1);
 		System.out.println("Do you want to Save ...Press Y/N");
 		String choice = Utility.userInputString();
@@ -97,19 +105,24 @@ public class UtilityAddressBook {
 		}
 	}
 
-	public static void remove(int index, String filename) throws Exception {
-		
-       list=pareseFile(filename);
+	public static void remove() throws Exception {
+		System.out.println("enter the index value ");
+		int index = Utility.userInputInteger();
+		System.out.println("enter the file name to be deleted");
+		String filename = Utility.userInputString();
+		String file1 = "/home/bridgrlabz/Addressbook/"+filename+".json";
+		list = pareseFile(file1);
 		if (!list.isEmpty()) {
 
-			list.remove(index);
-			System.out.println(list.toString());
+		
+			//System.out.println(list.toString());
 
 			System.out.println("Do you want to Save ...Press Y/N");
 			String choice = Utility.userInputString();
 			if ("Y".equalsIgnoreCase(choice)) {
 				ObjectMapper mapper = new ObjectMapper();
-				mapper.writeValue(new File(filename), list);
+				list.remove(index);
+				mapper.writeValue(new File(file1), list);
 			}
 		} else {
 			System.out.println(" No items to be deleted!!");
@@ -117,20 +130,22 @@ public class UtilityAddressBook {
 
 	}
 
-	public static List<Object> pareseFile(String file)
-			throws FileNotFoundException, IOException, ParseException {
+	public static List<Object> pareseFile(String file) throws FileNotFoundException, IOException, ParseException {
 		Object object = new JSONParser().parse(new FileReader(file));
 		JSONArray array = (JSONArray) object;
 		for (int i = 0; i < array.size(); i++) {
 			JSONObject obj = (JSONObject) array.get(i);
 			list.add(array.get(i));
+			
 		}
 		return list;
 	}
 
-	public static void sort(String file) throws Exception {
-	
-		list=pareseFile(file);
+	public static void sort() throws Exception {
+		System.out.println("enter the address book to be sorted");
+		String filename = Utility.userInputString();
+		String file1 = "/home/bridgrlabz/Addressbook/"+filename+".json";
+		list = pareseFile(file1);
 
 		for (int i = 0; i < list.size() - 1; i++) {
 			for (int j = 0; j < list.size() - i - 1; j++) {
@@ -144,14 +159,16 @@ public class UtilityAddressBook {
 				}
 			}
 			ObjectMapper mapper = new ObjectMapper();
-			mapper.writeValue(new File(file), list);
+			mapper.writeValue(new File(file1), list);
 
 		}
 	}
 
-	public static void addPersonToexistingfile(String file) throws Exception {
-		
-		list = pareseFile(file);
+	public static void addPersonToexistingfile() throws Exception {
+		System.out.println("enter the file name");
+		String filename = Utility.userInputString();
+		 String file1 = "/home/bridgrlabz/Addressbook/"+filename+".json";
+		list = pareseFile(file1);
 		System.out.println("enter the name of address book you want to add");
 		System.out.println("enter the number of person's");
 		int noofperson = Utility.userInputInteger();
@@ -180,7 +197,7 @@ public class UtilityAddressBook {
 		String choice = Utility.userInputString();
 		if ("Y".equalsIgnoreCase(choice)) {
 			ObjectMapper mapper = new ObjectMapper();
-			mapper.writeValue(new File(file), list);
+			mapper.writeValue(new File(file1), list);
 
 			System.out.println("writing successfull...");
 

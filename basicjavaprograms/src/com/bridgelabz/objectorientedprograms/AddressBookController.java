@@ -6,14 +6,10 @@ import com.bridgelabz.utility.Utility;
 
 public class AddressBookController {
 
-	public static void main(String[] args){
-		
-	
-
-		AddressBook addressbook = new AddressBook();
+	public static void main(String[] args) throws Exception {
 		System.out.println("Welcome to Address Book");
-		while(true)
-		{
+		AddressBook addressbook = new AddressBook();
+ 
 		System.out.println("Enter 1 to Add a new address Book");
 		System.out.println("Enter 2 to view Address Book");
 		System.out.println("Enter 3 to sort by Name ");
@@ -21,46 +17,35 @@ public class AddressBookController {
 		int choice = Utility.userInputInteger();
 		switch (choice) {
 		case 1: {
-			System.out.println("Enter 1 to Add AddressBook");
-			System.out.println("Enter 2 to Edit AddressBook");
-			System.out.println("Enter 3 to Delete AddressBook");
+			System.out.println("Enter 1 to Add Person ");
+			System.out.println("Enter 2 to Edit Person");
+			System.out.println("Enter 3 to Delete P");
 			int choice1 = Utility.userInputInteger();
+
 			switch (choice1) {
 			case 1: {
 
-				try {
-					addressbook.addPerson();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				addressbook.addPerson();
+
 				break;
 			}
 			case 2: {
-				try {
-					addressbook.doEdit();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+
+				addressbook.doEdit();
+
 				break;
 			}
 			case 3: {
-				
-				try {
-					addressbook.remove();
-				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+
+				addressbook.remove();
+
 				break;
 			}
-			default:break;
-
 			}
-			break;
 		}
+		
 		case 2:
+
 			File folder = new File("/home/bridgrlabz/Addressbook/");
 			File[] listOfFiles = folder.listFiles();
 			for (File file : listOfFiles) {
@@ -68,36 +53,22 @@ public class AddressBookController {
 					System.out.println(file.getName());
 				}
 			}
-		
-
 			System.out.println("Enter the file name you want View");
 			String filename = Utility.userInputString();
 			String file = "/home/bridgrlabz/Addressbook/" + filename + ".json";
-			try {
-				UtilityAddressBook.print(file);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+
+			UtilityAddressBook.print(file);
 
 			break;
 
 		case 3:
 
-			try {
-				addressbook.sort();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			addressbook.sort();
 
 			break;
 
 		case 4:
-			System.exit(0);
-			break;
-			default: break;
+			return;
 		}
 	}
-}
 }

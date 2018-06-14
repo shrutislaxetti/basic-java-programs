@@ -11,4 +11,7 @@ public class EagerInitializedSingleton {
 	public static EagerInitializedSingleton getInstance() {
 		return instance;
 	}
+	public static void main(String[] args) {
+		getInstance();
+	}
 }

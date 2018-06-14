@@ -6,7 +6,12 @@
 	},
 	{
 		"stocksymbol": "sh",
-		"numberOfShares": 2,
+		"numberOfShares": 0,
 		"sharePrice": 4.0
+	},
+	{
+		"stocksymbol": "stock1",
+		"numberOfShares": 1,
+		"sharePrice": 10.0
 	}
 ]

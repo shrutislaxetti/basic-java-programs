@@ -31,9 +31,9 @@ public class TransactionServiceImplementation implements TransactionService {
 		transactionlist = Utility.parseJSONArray(transactionfile, Transaction.class);
 		boolean found = false;
 
-		Stock s = new Stock();
-		Transaction t = new Transaction();
-		Customer c = new Customer();
+		Stock stock = new Stock();
+		Transaction transaction = new Transaction();
+		Customer customer = new Customer();
 
 		int stockindex = 0;
 		System.out.println("Enter the stock name you want to buy from:");
@@ -53,11 +53,11 @@ public class TransactionServiceImplementation implements TransactionService {
 			int numofshares = Utility.userInputInteger();
 			if (stocklist.get(stockindex).getNumberOfShares() >= numofshares) {
 				int finalshare = stocklist.get(stockindex).getNumberOfShares() - numofshares;
-				s.setNumberOfShares(finalshare);
-				s.setStocksymbol(stocklist.get(stockindex).getStocksymbol());
-				s.setSharePrice(stocklist.get(stockindex).getSharePrice());
+				stock.setNumberOfShares(finalshare);
+				stock.setStocksymbol(stocklist.get(stockindex).getStocksymbol());
+				stock.setSharePrice(stocklist.get(stockindex).getSharePrice());
 				stocklist.remove(stockindex);
-				stocklist.add(s);
+				stocklist.add(stock);
 				mapper.writeValue(stockfile, stocklist);
 			}
 			/**
@@ -65,14 +65,14 @@ public class TransactionServiceImplementation implements TransactionService {
 			 */
 			double initialamount = stocklist.get(stockindex).getSharePrice();
 			double finalamout = initialamount * numofshares;
-			double amount = customerlist.get(stockindex).getAmount() + finalamout;
+			double amount = customerlist.get(stockindex).getAmount()- finalamout;
 			int initialshare = customerlist.get(stockindex).getNumberOfShares();
 			int sharefinal = initialshare + numofshares;
-			c.setNumberOfShares(sharefinal);
-			c.setAmount(amount);
-			c.setCustomerName(customerlist.get(stockindex).getCustomerName());
+			customer.setNumberOfShares(sharefinal);
+			customer.setAmount(amount);
+			customer.setCustomerName(customerlist.get(stockindex).getCustomerName());
 			customerlist.remove(stockindex);
-			customerlist.add(c);
+			customerlist.add(customer);
 			mapper.writeValue(customerfile, customerlist);
 			
 			/**
@@ -81,14 +81,14 @@ public class TransactionServiceImplementation implements TransactionService {
 			
 			System.out.println("enter the transaction type:");
 			String type = Utility.userInputString();
-			t.setTransactionType(type);
-			t.setCustomerName(stocklist.get(stockindex).getStocksymbol());
-			t.setAmount(amount);
-			t.setSharesBouught(numofshares);
-			t.setStockSymbol(stockname);
-			t.setTimestamp(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
-			transactionlist.remove(stockindex);
-			transactionlist.add(t);
+			transaction.setTransactionType(type);
+			transaction.setCustomerName(stocklist.get(stockindex).getStocksymbol());
+			transaction.setAmount(amount);
+			transaction.setSharesBouught(numofshares);
+			transaction.setStockSymbol(stockname);
+			transaction.setTimestamp(new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date()));
+			//transactionlist.remove(stockindex);
+			transactionlist.add(transaction);
 			mapper.writeValue(transactionfile, transactionlist);
 
 		}

@@ -6,5 +6,13 @@
 		"stockSymbol": "sh",
 		"amount": 30.0,
 		"timestamp": "2018.06.13.14.54.29"
+	},
+	{
+		"transactionType": "buy",
+		"customerName": "sh",
+		"sharesBouught": 2,
+		"stockSymbol": "gh",
+		"amount": 22.0,
+		"timestamp": "2018.06.14.19.33.46"
 	}
 ]

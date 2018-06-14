@@ -4,13 +4,20 @@
 		"doctorid": "103",
 		"specialization": "Md",
 		"availabity": "Am",
-		"count": 3
+		"count": 5
 	},
 	{
 		"doctorname": "Dr.simran",
 		"doctorid": "102",
-		"specialization": "Mbbs",
-		"availabity": "pm",
+		"specialization": "shhhh",
+		"availabity": "jkdfh",
+		"count": 0
+	},
+	{
+		"doctorname": "Dr.simran",
+		"doctorid": "102",
+		"specialization": "1222",
+		"availabity": "sgd",
 		"count": 0
 	}
 ]

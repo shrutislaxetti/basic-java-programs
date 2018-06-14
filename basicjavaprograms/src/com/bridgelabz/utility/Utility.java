@@ -9,19 +9,13 @@
  ******************************************************************************/
 package com.bridgelabz.utility;
 
-import java.awt.List;
-import java.text.DateFormat;
-import java.text.FieldPosition;
-import java.text.ParsePosition;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.bridgelabz.datastructures.*;
-import com.bridgelabz.functionalprograms.ReplaceString;
 
 public class Utility {
 
@@ -1114,6 +1108,36 @@ public class Utility {
 		for (int j = 0; j < 4; j++) {
 			for (int i = 0; i < 9; i++) {
 				array.dispay();
+			}
+			System.out.println();
+		}
+	}
+	public static String[][] intializecards(String[][] deck, String[] suits, String[] cards) {
+		for (int i = 0; i < suits.length; i++) {
+			for (int j = 0; j < cards.length; j++) {
+				deck[i][j] = suits[i] + "-" + cards[j];
+			}
+		}
+		return deck;
+	}
+
+	public static String[][] shuffle(String[][] deck, int suitsize, int cardsize) {
+		for (int i = 0; i < suitsize; i++) {
+			for (int j = 0; j < cardsize; j++) {
+				Random random=new Random();
+				int randomValue1 = random.nextInt(suitsize);
+				int randomValue2 = random.nextInt(cardsize);
+				String temp = deck[randomValue1][randomValue2];
+				deck[randomValue1][randomValue2] = deck[i][j];
+				deck[i][j] = temp;
+			}
+		}
+		return deck;
+	}
+	public static void printcards(String[][] deck) {
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 9; j++) {
+				System.out.print(deck[i][j]+" , ");
 			}
 			System.out.println();
 		}

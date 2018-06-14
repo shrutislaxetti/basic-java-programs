@@ -17,9 +17,9 @@ public class Controller {
 		int i = 0;
 		System.out.println("Welcome to StockManagement:");
 		while (i <= 8) {
-			System.out.println("Enter 1. to View StockPortfolio ");
-			System.out.println("Enter 2. to View CustomerPortfolio ");
-			System.out.println("Enter 3. to Buy ");
+			System.out.println("Enter 1. TO View StockPortfolio ");
+			System.out.println("Enter 2. TO View CustomerPortfolio ");
+			System.out.println("Enter 3. TO BUY");
 			System.out.println("Enter 4. TO ADD  STOCKACCOUNT:");
 			System.out.println("Enter 5. TO DELETE STOCKACCOUNT:");
 			System.out.println("Enter 6. TO ADDCUSTOMER:");
@@ -40,16 +40,17 @@ public class Controller {
 				transactionservice.buy();
 				break;
 			case 4:
-				stockservice.deleteStock();
-				break;
-			case 5:
 				stockservice.addStock();
 				break;
+			case 5:
+				stockservice.deleteStock();
+				break;
 			case 6:
-				customerservice.updatecustomer();
+				customerservice.addCustomer();
 				break;
 			case 7:
-				customerservice.addCustomer();
+				customerservice.updatecustomer();
+				
 				break;
 			case 8:
 				customerservice.deletecustomer();

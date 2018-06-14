@@ -1,7 +1,1 @@
-[
-	{
-		"customerName": "Medini",
-		"amount": 30.0,
-		"numberOfShares": 10
-	}
-]
+[{"customerName":"suhil","amount":10002.0,"numberOfShares":13},{"customerName":"Medini","amount":22.0,"numberOfShares":12}]
