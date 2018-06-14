@@ -1,0 +1,20 @@
+[
+	{
+		"patientname": "shr",
+		"patientid": "101",
+		"mobilenum": "94493",
+		"age": 12
+	},
+	{
+		"patientname": "abc",
+		"patientid": "12",
+		"mobilenum": "4437",
+		"age": 23
+	},
+	{
+		"patientname": "sh",
+		"patientid": "sd",
+		"mobilenum": "232",
+		"age": 32
+	}
+]

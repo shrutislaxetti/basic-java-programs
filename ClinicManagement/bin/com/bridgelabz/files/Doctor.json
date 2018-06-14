@@ -1,0 +1,16 @@
+[
+	{
+		"doctorname": "Dr.mamta",
+		"doctorid": "103",
+		"specialization": "Md",
+		"availabity": "Am",
+		"count": 3
+	},
+	{
+		"doctorname": "Dr.simran",
+		"doctorid": "102",
+		"specialization": "Mbbs",
+		"availabity": "pm",
+		"count": 0
+	}
+]
