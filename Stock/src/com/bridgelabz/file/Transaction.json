@@ -1,0 +1,10 @@
+[
+	{
+		"transactionType": "buy",
+		"customerName": "gh",
+		"sharesBouught": 1,
+		"stockSymbol": "sh",
+		"amount": 30.0,
+		"timestamp": "2018.06.13.14.54.29"
+	}
+]

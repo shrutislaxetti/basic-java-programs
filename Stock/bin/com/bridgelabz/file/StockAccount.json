@@ -1,0 +1,12 @@
+[
+	{
+		"stocksymbol": "gh",
+		"numberOfShares": 4,
+		"sharePrice": 4.0
+	},
+	{
+		"stocksymbol": "sh",
+		"numberOfShares": 2,
+		"sharePrice": 4.0
+	}
+]
