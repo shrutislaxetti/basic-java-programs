@@ -5,7 +5,7 @@ public class Transaction {
 	String customerName;
 	int sharesBouught;
 	String stockSymbol;
-	double amount;
+	
 	String timestamp;
 	
 	public Transaction(String transactionType, String customerName, int sharesBouught, String stockSymbol,
@@ -15,7 +15,7 @@ public class Transaction {
 		this.customerName = customerName;
 		this.sharesBouught = sharesBouught;
 		this.stockSymbol = stockSymbol;
-		this.amount = amount;
+		
 		this.timestamp = timestamp;
 	}
 	public String getTransactionType() {
@@ -42,12 +42,7 @@ public class Transaction {
 	public void setStockSymbol(String stockSymbol) {
 		this.stockSymbol = stockSymbol;
 	}
-	public double getAmount() {
-		return amount;
-	}
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
+	
 	public String getTimestamp() {
 		return timestamp;
 	}

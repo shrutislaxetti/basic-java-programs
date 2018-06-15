@@ -105,18 +105,10 @@ public class UtilityAddressBook {
 		}
 	}
 
-	public static void remove() throws Exception {
-		System.out.println("enter the index value ");
-		int index = Utility.userInputInteger();
-		System.out.println("enter the file name to be deleted");
-		String filename = Utility.userInputString();
-		String file1 = "/home/bridgrlabz/Addressbook/"+filename+".json";
+	public static void remove(int index, String file1) throws Exception {
 		list = pareseFile(file1);
 		if (!list.isEmpty()) {
-
-		
-			//System.out.println(list.toString());
-
+			//list.remove(index);
 			System.out.println("Do you want to Save ...Press Y/N");
 			String choice = Utility.userInputString();
 			if ("Y".equalsIgnoreCase(choice)) {
@@ -124,9 +116,29 @@ public class UtilityAddressBook {
 				list.remove(index);
 				mapper.writeValue(new File(file1), list);
 			}
+       
 		} else {
 			System.out.println(" No items to be deleted!!");
 		}
+		/*if (!list.isEmpty()) {
+			System.out.println("Enter the file name to be deleted");
+			String id = Utility.userInputString();
+
+			for (int i = 0; i < list.size(); i++) {
+
+				if (list1.get(i).getPatientid().equals(id))
+					list1.remove(i);
+			}
+			mapper.writeValue(file1, list1);
+			System.out.println("Do you want to Save ...Press Y/N");
+			String choice = Utility.userInputString();
+			if ("Y".equalsIgnoreCase(choice)) {
+				mapper.writeValue(file1, list1);
+			}
+
+		} else {
+			System.out.println("list is empty...");
+		}*/
 
 	}
 

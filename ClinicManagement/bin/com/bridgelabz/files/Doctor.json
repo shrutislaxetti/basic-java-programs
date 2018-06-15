@@ -1,23 +1,23 @@
 [
 	{
-		"doctorname": "Dr.mamta",
+		"doctorname": "mamta",
 		"doctorid": "103",
-		"specialization": "Md",
-		"availabity": "Am",
+		"specialization": "pediatrician",
+		"availabity": "am",
 		"count": 5
 	},
 	{
-		"doctorname": "Dr.simran",
-		"doctorid": "102",
-		"specialization": "shhhh",
-		"availabity": "jkdfh",
-		"count": 0
+		"doctorname": "aruna",
+		"doctorid": "11",
+		"specialization": "md",
+		"availabity": "pm",
+		"count": 5
 	},
 	{
-		"doctorname": "Dr.simran",
-		"doctorid": "102",
-		"specialization": "1222",
-		"availabity": "sgd",
+		"doctorname": "chaitra",
+		"doctorid": "120",
+		"specialization": "Neurologist",
+		"availabity": "both",
 		"count": 0
 	}
 ]

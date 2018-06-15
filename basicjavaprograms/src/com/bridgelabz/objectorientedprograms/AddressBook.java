@@ -33,9 +33,13 @@ public class AddressBook {
 	}
 
 	public void remove() throws Exception {
-		//System.out.println("Enter the file name you want to delete");
 		
-		UtilityAddressBook.remove();
+		System.out.println("enter the file name from whrere it has to be  be deleted");
+		String filename = Utility.userInputString();
+		System.out.println("enter the index value ");
+		int index = Utility.userInputInteger();
+		String file1 = "/home/bridgrlabz/Addressbook/"+filename+".json";
+		UtilityAddressBook.remove(index,file1);
 
 	}
 
@@ -43,5 +47,7 @@ public class AddressBook {
 		
 		UtilityAddressBook.sort();
 	}
+
+	
 	
 }

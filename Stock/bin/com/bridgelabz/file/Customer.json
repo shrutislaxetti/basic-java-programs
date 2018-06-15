@@ -1,12 +1,12 @@
 [
 	{
-		"customerName": "Medini",
-		"amount": 30.0,
-		"numberOfShares": 10
+		"customerName": "Suhel",
+		"amount": 80000.0,
+		"numberOfShares": 2
 	},
 	{
-		"customerName": "suhil",
-		"amount": 10002.0,
-		"numberOfShares": 13
+		"customerName": "shruti",
+		"amount": 3000.0,
+		"numberOfShares": 30
 	}
 ]

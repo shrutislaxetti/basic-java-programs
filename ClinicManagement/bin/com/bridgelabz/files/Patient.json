@@ -1,26 +1,20 @@
 [
 	{
-		"patientname": "chaitra",
-		"patientid": "120",
-		"mobilenum": "87756",
+		"patientname": "simran",
+		"patientid": "55",
+		"mobilenum": "87876",
+		"age": 24
+	},
+	{
+		"patientname": "shr",
+		"patientid": "66",
+		"mobilenum": "9999",
 		"age": 23
 	},
 	{
-		"patientname": "shruti",
-		"patientid": "543",
-		"mobilenum": "93745",
-		"age": 233
-	},
-	{
-		"patientname": "ahhh",
-		"patientid": "76234",
-		"mobilenum": "3485",
-		"age": 12
-	},
-	{
-		"patientname": "medini",
-		"patientid": "123",
-		"mobilenum": "94433",
-		"age": 23
+		"patientname": "simran",
+		"patientid": "777",
+		"mobilenum": "777777777",
+		"age": 77
 	}
 ]

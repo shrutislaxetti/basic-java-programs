@@ -32,16 +32,17 @@ public class CustomerServiceImlementation implements CustomerService {
 	 */
 
 	public void updatecustomer() throws Exception {
-
+	
 		customerlist = Utility.parseJSONArray(customerfile, Customer.class);
 		if (!customerlist.isEmpty()) {
 			System.out.println("enter the index where it need to be updated..");
 			int index = Utility.userInputInteger();
 			customerlist = Utility.updateCustomer(customerlist, index);
-			customerlist.remove(index);
+			
 			System.out.println("Do you want to Save ...Press Y/N");
 			String choice = Utility.userInputString();
 			if ("Y".equalsIgnoreCase(choice)) {
+				customerlist.remove(index);
 				mapper.writeValue(customerfile, customerlist);
 				System.out.println("Writing successful..");
 			}
