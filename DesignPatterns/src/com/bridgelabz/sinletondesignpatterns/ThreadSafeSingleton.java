@@ -1,4 +1,4 @@
-package com.bridgelanz.designpatterns;
+package com.bridgelabz.sinletondesignpatterns;
 
 public class ThreadSafeSingleton {
 	private static ThreadSafeSingleton instance;

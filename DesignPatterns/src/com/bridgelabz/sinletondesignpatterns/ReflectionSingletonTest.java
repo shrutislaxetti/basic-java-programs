@@ -1,4 +1,4 @@
-package com.bridgelanz.designpatterns;
+package com.bridgelabz.sinletondesignpatterns;
 
 import java.lang.reflect.Constructor;
 

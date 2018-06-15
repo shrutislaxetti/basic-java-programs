@@ -1,4 +1,4 @@
-package com.bridgelanz.designpatterns;
+package com.bridgelabz.sinletondesignpatterns;
 
 public class LazyInitializedSingleton {
 	private static LazyInitializedSingleton instance;
