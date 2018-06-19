@@ -22,7 +22,6 @@ public class ServiceImplementations implements Services{
 	System.out.println("registration successfull");
 	object.getConnection();
 	object.register(user);
-	System.out.println("Registration successfull");
 	DatabaseAccessObject.closeconnection();
 
 	}

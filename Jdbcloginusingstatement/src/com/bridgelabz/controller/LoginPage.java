@@ -16,8 +16,6 @@ public class LoginPage {
 		switch (choice) {
 		case 1:
 			service.register();
-			
-			
 			break;
 		case 2:
 			System.out.println("enter email");
@@ -25,7 +23,6 @@ public class LoginPage {
 			System.out.println("enter passward");
 			String passward=Utility.userInputString();
 			service.login(email,passward);
-			System.out.println("Login successfull");
 			break;
 		default:
 			System.out.println("enter wrong choice...");
